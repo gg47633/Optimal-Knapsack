@@ -8,6 +8,7 @@ public class Driver {
     String smallLocation = "src/SmallKnapsacks/";
     String mediumLocation = "src/MediumKnapsacks/";
     String largeLocation = "src/LargeKnapsacks/";
+    String extremeLocation = "src/ExtremeKnapsacks/";
     double[] bottomTime = new double[30];
     double[] topTime = new double[30];
 
@@ -55,6 +56,24 @@ public class Driver {
     //Write large knapsack results to file
     try (BufferedWriter writer = new BufferedWriter(new FileWriter("Results.txt",true))) {
       writer.write("Times for large knapsacks:\n");
+      writer.write("   Bottom Up: ");
+      for (int i = 0; i < 30; i++) {
+        writer.write(bottomTime[i] + " ");
+      }
+      writer.write("\n   Top Down: ");
+      for (int i = 0; i < 30; i++) {
+        writer.write(topTime[i] + " ");
+      }
+      writer.write("\n");
+    }
+    //Extreme Knapsacks
+    for (int i = 0; i < 30; i++) {
+      bottomTime[i] = BottomUp.bottomUp(extremeLocation + "extremeKnap" + (i + 1));
+      topTime[i] = TopDown.topDown(extremeLocation + "extremeKnap" + (i + 1));
+    }
+    //Write large knapsack results to file
+    try (BufferedWriter writer = new BufferedWriter(new FileWriter("Results.txt",true))) {
+      writer.write("Times for extreme knapsacks:\n");
       writer.write("   Bottom Up: ");
       for (int i = 0; i < 30; i++) {
         writer.write(bottomTime[i] + " ");

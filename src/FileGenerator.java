@@ -53,7 +53,7 @@ public class FileGenerator {
       }
     }
     if (type == 3) {
-      //Medium knapsacks
+      //Large knapsacks
       Random random = new Random();
       try (BufferedWriter writer = new BufferedWriter(new FileWriter(name))) {
         // Generate and write random numbers to the file
@@ -64,6 +64,24 @@ public class FileGenerator {
         for (int i = 0; i < numberOfItems; i++) {
           int itemWeight = random.nextInt(1, Math.min(maxWeight + 1, 26));
           int itemValue = random.nextInt(1,21);
+          writer.write(itemWeight + " " + itemValue + "\n");
+        }
+      } catch (IOException e) {
+        System.out.println("An error occurred while writing to the file: " + e.getMessage());
+      }
+    }
+    if (type == 4) {
+      //Extreme knapsacks
+      Random random = new Random();
+      try (BufferedWriter writer = new BufferedWriter(new FileWriter(name))) {
+        // Generate and write random numbers to the file
+        int maxWeight = random.nextInt(100,1001);
+        writer.write(maxWeight + "\n");
+
+        int numberOfItems = random.nextInt(40,101);
+        for (int i = 0; i < numberOfItems; i++) {
+          int itemWeight = random.nextInt(1, Math.min(maxWeight + 1, 70));
+          int itemValue = random.nextInt(1,151);
           writer.write(itemWeight + " " + itemValue + "\n");
         }
       } catch (IOException e) {

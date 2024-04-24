@@ -15,8 +15,8 @@ public class BottomUp {
 
       // Initialize the arrays to store weights and values
       int n = 0;
-      int[] wt = new int[40]; // Assuming we have at most 10 items
-      int[] val = new int[40];
+      int[] wt = new int[1001]; // Assuming we have at most 10 items
+      int[] val = new int[1001];
 
       // Read the weights and values
       while (scanner.hasNextInt()) {

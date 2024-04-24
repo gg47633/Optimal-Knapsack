@@ -7,6 +7,7 @@ public class FileCreation {
     String smallLocation = "src/SmallKnapsacks/";
     String mediumLocation = "src/MediumKnapsacks/";
     String largeLocation = "src/LargeKnapsacks/";
+    String extremeLocation = "src/ExtremeKnapsacks/";
 
 
     //Generate knapsacks
@@ -17,6 +18,8 @@ public class FileCreation {
       fileGen.generate(mediumLocation + "mediumKnap" + i, 2);
       //Large
       fileGen.generate(largeLocation + "largeKnap" + i, 3);
+      //Extreme
+      fileGen.generate(extremeLocation + "extremeKnap" + i, 4);
     }
   }
 }
