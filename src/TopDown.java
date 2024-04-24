@@ -61,6 +61,6 @@ public class TopDown {
         System.out.println("An error occurred.");
         e.printStackTrace();
       }
-      return (endTime - startTime);
+      return (endTime - startTime)/1000;
     }
   }
