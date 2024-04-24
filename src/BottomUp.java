@@ -4,21 +4,26 @@ import java.util.Scanner;
 
 public class BottomUp {
 
+  /**
+   *
+   * @param fileName is the name of the input file
+   * @return the time the knapsack calculation took in microseconds
+   */
   public static double bottomUp(String fileName) {
     double startTime = 0, endTime = 0;
     try {
       File file = new File(fileName);
       Scanner scanner = new Scanner(file);
 
-      // Read the maximum weight of the knapsack
+      //Read the maximum weight of the knapsack
       int W = scanner.nextInt();
 
-      // Initialize the arrays to store weights and values
+      //Initialize the arrays to store weights and values
       int n = 0;
-      int[] wt = new int[1001]; // Assuming we have at most 10 items
+      int[] wt = new int[1001];
       int[] val = new int[1001];
 
-      // Read the weights and values
+      //Read the weights and values
       while (scanner.hasNextInt()) {
         wt[n] = scanner.nextInt();
         val[n] = scanner.nextInt();
@@ -26,7 +31,6 @@ public class BottomUp {
       }
       scanner.close();
 
-      // Initialize the DP array
       int[][] dp = new int[n + 1][W + 1];
       startTime = System.nanoTime();
 
@@ -42,13 +46,13 @@ public class BottomUp {
       }
       endTime = System.nanoTime();
 
-      // The maximum value that can be put in a knapsack of maxWeight
       //System.out.println(dp[n][W]);
 
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
       e.printStackTrace();
     }
+    //Divides nanoseconds by 1000 to return microseconds
     return (endTime - startTime)/1000;
   }
 }

@@ -9,11 +9,13 @@ public class Driver {
     String mediumLocation = "src/MediumKnapsacks/";
     String largeLocation = "src/LargeKnapsacks/";
     String extremeLocation = "src/ExtremeKnapsacks/";
+
     double[] bottomTime = new double[30];
     double[] topTime = new double[30];
 
     //Small Knapsacks
     for (int i = 0; i < 30; i++) {
+      //Puts bottomUp and topDown times into respective arrays to be put in results file
       bottomTime[i] = BottomUp.bottomUp(smallLocation + "smallKnap" + (i + 1));
       topTime[i] = TopDown.topDown(smallLocation + "smallKnap" + (i + 1));
     }
@@ -30,6 +32,7 @@ public class Driver {
       }
       writer.write("\n");
     }
+
     //Medium Knapsacks
     for (int i = 0; i < 30; i++) {
       bottomTime[i] = BottomUp.bottomUp(mediumLocation + "mediumKnap" + (i + 1));
@@ -48,6 +51,7 @@ public class Driver {
       }
       writer.write("\n");
     }
+
     //Large Knapsacks
     for (int i = 0; i < 30; i++) {
       bottomTime[i] = BottomUp.bottomUp(largeLocation + "largeKnap" + (i + 1));
