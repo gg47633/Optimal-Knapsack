@@ -15,8 +15,8 @@ public class BottomUp {
 
       // Initialize the arrays to store weights and values
       int n = 0;
-      int[] wt = new int[10]; // Assuming we have at most 10 items
-      int[] val = new int[10];
+      int[] wt = new int[40]; // Assuming we have at most 10 items
+      int[] val = new int[40];
 
       // Read the weights and values
       while (scanner.hasNextInt()) {
@@ -26,9 +26,9 @@ public class BottomUp {
       }
       scanner.close();
 
-      startTime = System.currentTimeMillis();
       // Initialize the DP array
       int[][] dp = new int[n + 1][W + 1];
+      startTime = System.nanoTime();
 
       for (int i = 0; i <= n; i++) {
         for (int w = 0; w <= W; w++) {
@@ -40,10 +40,10 @@ public class BottomUp {
             dp[i][w] = dp[i - 1][w];
         }
       }
-      endTime = System.currentTimeMillis();
+      endTime = System.nanoTime();
 
       // The maximum value that can be put in a knapsack of maxWeight
-      //System.out.println(dp[n][W]);
+      System.out.println(dp[n][W]);
 
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
