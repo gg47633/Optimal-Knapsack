@@ -53,9 +53,9 @@ public class TopDown {
         Integer[][] memo = new Integer[numberOfItems + 1][maxWeight + 1];
 
         startTime = System.nanoTime();
-        int result = knapsack(maxWeight, weights, values, numberOfItems, memo);
+        knapsack(maxWeight, weights, values, numberOfItems, memo);
         endTime = System.nanoTime();
-        System.out.println("Maximum value we can obtain = " + result);
+        //System.out.println("Maximum value we can obtain = " + result);
 
       } catch (FileNotFoundException e) {
         System.out.println("An error occurred.");

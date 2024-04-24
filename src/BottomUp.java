@@ -43,7 +43,7 @@ public class BottomUp {
       endTime = System.nanoTime();
 
       // The maximum value that can be put in a knapsack of maxWeight
-      System.out.println(dp[n][W]);
+      //System.out.println(dp[n][W]);
 
     } catch (FileNotFoundException e) {
       System.out.println("An error occurred.");
